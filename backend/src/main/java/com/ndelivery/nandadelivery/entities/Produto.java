@@ -1,4 +1,4 @@
-package entities;
+package com.ndelivery.nandadelivery.entities;
 
 import java.io.Serializable;
 
