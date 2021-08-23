@@ -36,6 +36,7 @@ public class Entrega implements Serializable {
 		this.precoEntrega = precoEntrega;
 	}
 
+	
 	public Entrega(Long id, Double precoEntrega) {
 		this.id = id;
 		this.precoEntrega = precoEntrega;
