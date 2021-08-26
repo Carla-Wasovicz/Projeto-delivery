@@ -2,6 +2,7 @@ package com.ndelivery.nandadelivery.entities;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -16,9 +17,15 @@ public class Entrega implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	@Column
 	private Double precoEntrega;
 	
 	public Entrega() {}
+
+	public Entrega(Long id, Double precoEntrega) {
+		this.id = id;
+		this.precoEntrega = precoEntrega;
+	}
 
 	public Long getId() {
 		return id;
@@ -33,12 +40,6 @@ public class Entrega implements Serializable {
 	}
 
 	public void setPrecoEntrega(Double precoEntrega) {
-		this.precoEntrega = precoEntrega;
-	}
-
-	
-	public Entrega(Long id, Double precoEntrega) {
-		this.id = id;
 		this.precoEntrega = precoEntrega;
 	}
 
@@ -66,7 +67,9 @@ public class Entrega implements Serializable {
 			return false;
 		return true;
 	}
+
 	
+
 	
 
 }
