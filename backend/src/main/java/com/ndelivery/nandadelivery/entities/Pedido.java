@@ -92,6 +92,14 @@ public class Pedido implements Serializable {
 	public void setStatus(StatusPedido status) {
 		this.status = status;
 	}
+	
+	public Double getTotal() {
+		double soma = 0.0;
+		for (Produto p : produtos) {
+			soma += p.getPreco();
+		}
+		return soma;
+	}
 
 	public Set<Produto> getProdutos() {
 		return produtos;

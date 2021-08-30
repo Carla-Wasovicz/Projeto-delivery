@@ -18,19 +18,21 @@ public class PedidoDTO implements Serializable{
 	private Double longitude;
 	private Instant hora;
 	private StatusPedido status;
+	private Double total;
 	
 	private List<ProdutoDTO> produtos = new ArrayList<>();
 	
 	public PedidoDTO() {}
 
 
-	public PedidoDTO(Long id, String endereco, Double latitude, Double longitude, Instant hora, StatusPedido status) {
+	public PedidoDTO(Long id, String endereco, Double latitude, Double longitude, Instant hora, StatusPedido status, Double total) {
 		this.id = id;
 		this.endereco = endereco;
 		this.latitude = latitude;
 		this.longitude = longitude;
 		this.hora = hora;
 		this.status = status;
+		this.total = total;
 	}
 	
 	public PedidoDTO(Pedido entity) {
@@ -40,6 +42,7 @@ public class PedidoDTO implements Serializable{
 		longitude = entity.getLongitude();
 		hora = entity.getHora();
 		status = entity.getStatus();
+		total = entity.getTotal();
 		produtos = entity.getProdutos().stream().
 				map(x -> new ProdutoDTO()).collect(Collectors.toList());
 	}
@@ -102,6 +105,15 @@ public class PedidoDTO implements Serializable{
 
 	public void setStatus(StatusPedido status) {
 		this.status = status;
+	}
+	
+	public Double getTotal() {
+		return total;
+	}
+
+
+	public void setTotal(Double total) {
+		this.total = total;
 	}
 
 
