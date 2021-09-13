@@ -19,3 +19,8 @@ INSERT INTO tb_pedido_produto (pedido_id, produto_id) VALUES (1 , 1);
 INSERT INTO tb_pedido_produto (pedido_id, produto_id) VALUES (1 , 2);
 INSERT INTO tb_pedido_produto (pedido_id, produto_id) VALUES (3 , 1);
 
+INSERT INTO tb_entrega (preco_Entrega)
+VALUES (5.0);
+
+INSERT INTO tb_entregador (cpf,nome,telefone)
+VALUES ('32165498-56','João Silva','(67) 99999-8888');

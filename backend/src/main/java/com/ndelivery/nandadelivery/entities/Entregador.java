@@ -2,7 +2,6 @@ package com.ndelivery.nandadelivery.entities;
 
 import java.io.Serializable;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -10,21 +9,23 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "tb_entrega")
-public class Entrega implements Serializable {
+@Table(name = "tb_entregador")
+public class Entregador implements Serializable {
 	private static final long serialVersionUID = 1L;
-	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	@Column
-	private Double precoEntrega;
+	private String cpf;
+	private String nome;
+	private String telefone;
 	
-	public Entrega() {}
+	public Entregador() {}
 
-	public Entrega(Long id, Double precoEntrega) {
+	public Entregador(Long id, String cpf, String nome, String telefone) {
 		this.id = id;
-		this.precoEntrega = precoEntrega;
+		this.cpf = cpf;
+		this.nome = nome;
+		this.telefone = telefone;
 	}
 
 	public Long getId() {
@@ -35,12 +36,28 @@ public class Entrega implements Serializable {
 		this.id = id;
 	}
 
-	public Double getPrecoEntrega() {
-		return precoEntrega;
+	public String getCpf() {
+		return cpf;
 	}
 
-	public void setPrecoEntrega(Double precoEntrega) {
-		this.precoEntrega = precoEntrega;
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public String getTelefone() {
+		return telefone;
+	}
+
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
 	}
 
 	@Override
@@ -59,7 +76,7 @@ public class Entrega implements Serializable {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Entrega other = (Entrega) obj;
+		Entregador other = (Entregador) obj;
 		if (id == null) {
 			if (other.id != null)
 				return false;
