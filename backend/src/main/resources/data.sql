@@ -1,10 +1,14 @@
 INSERT INTO tb_produto (nome,preco,descricao,imagem)
-VALUES ('Geladinho Laka',3.0,'Geladinho de chocolate branco',
-'https://raw.githubusercontent.com/devsuperior/sds2/master/asses/pizza_bacon.jpg');
+VALUES ('Geladinho de Paçoca',3.0,'Paçoca',
+'https://github.com/Carla-Wasovicz/Projeto-delivery/blob/main/assets/Geladinho_Paoca.jpg');
 INSERT INTO tb_Produto (nome,preco,descricao,imagem)
-VALUES ('Geladinho Laka',3.0,'Geladinho de chocolate branco','https://raw.githubusercontent.com/devsuperior/sds2/master/assets/pizza_bacon.jpg');
+VALUES ('Geladinho Ninho e Nutella',3.0,'Ninho com Nutella','https://github.com/Carla-Wasovicz/Projeto-delivery/blob/main/assets/Geladinho_ninho_nutella.jpg');
 INSERT INTO tb_Produto (nome,preco,descricao,imagem)
-VALUES ('Geladinho Laka',3.0,'Geladinho de chocolate branco','https://raw.githubusercontent.com/devsuperior/sds2/master/assets/pizza_bacon.jpg');
+VALUES ('Geladinho Laka',3.0,'Chocolate branco','https://github.com/Carla-Wasovicz/Projeto-delivery/blob/main/assets/Geladinho_Paoca.jpg');
+INSERT INTO tb_Produto (nome,preco,descricao,imagem)
+VALUES ('Geladinho Leite',3.0,'Leite','https://github.com/Carla-Wasovicz/Projeto-delivery/blob/main/assets/Geladinho_Paoca.jpg');
+INSERT INTO tb_Produto (nome,preco,descricao,imagem)
+VALUES ('Geladinho Chocolate',3.0,'Chocolate ','https://github.com/Carla-Wasovicz/Projeto-delivery/blob/main/assets/Geladinho_Paoca.jpg');
 
 INSERT INTO tb_pedido (status,latitude,longitude,endereco,hora) 
 VALUES (0, -23.561680, -46.656139, 'Rua Piuna, 1500', TIMESTAMP WITH TIME ZONE '2021-01-01T10:00:00Z');
