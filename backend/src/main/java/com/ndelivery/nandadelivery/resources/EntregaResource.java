@@ -19,7 +19,7 @@ import com.ndelivery.nandadelivery.dto.ProdutoDTO;
 import com.ndelivery.nandadelivery.services.EntregaService;
 
 @RestController
-@RequestMapping(value = "/estregas" )
+@RequestMapping(value = "/entregas" )
 public class EntregaResource {
 	
 	@Autowired

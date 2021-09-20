@@ -42,7 +42,7 @@ public class PedidoResource {
 		PedidoDTO dto = service.setEntregue(id);
 		return ResponseEntity.ok().body(dto);
 		
-	}
+	} 
 }
 
 

@@ -1,5 +1,6 @@
 package com.ndelivery.nandadelivery.services;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 import javax.persistence.EntityNotFoundException;
@@ -26,6 +27,12 @@ public class ProdutoService {
 		return lista.stream().map(x -> new ProdutoDTO(x)).collect(Collectors.toList());
 		
 	}
+	@Transactional(readOnly = true)
+	public ProdutoDTO findById(Long id) {
+		Optional<Produto> obj = repository.findById(id);
+		Produto produto = obj.get();
+		return new ProdutoDTO(produto);
+	}
 	@Transactional
 	public ProdutoDTO insert(ProdutoDTO dto) {
 		Produto entity = new Produto();
@@ -39,7 +46,7 @@ public class ProdutoService {
 	@Transactional
 	public ProdutoDTO update(Long id, ProdutoDTO dto) {
 		try {
-			Produto entity = repository.getOne(id);
+			Produto entity = repository.getById(id);
 			entity.setDescricao(dto.getDescricao());
 			entity.setNome(dto.getNome());
 			entity.setPreco(dto.getPreco());
@@ -59,7 +66,6 @@ public class ProdutoService {
 		}
 		
 	}
-	
 	}
 	
 

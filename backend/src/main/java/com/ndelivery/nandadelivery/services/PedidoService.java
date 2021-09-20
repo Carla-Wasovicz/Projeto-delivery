@@ -35,7 +35,7 @@ public class PedidoService {
 		Pedido pedido = new Pedido(null, dto.getEndereco(), dto.getLatitude(), dto.getLongitude(),
 				Instant.now(),StatusPedido.PENDENTE);
 		for (ProdutoDTO p : dto.getProdutos()) {
-			Produto produto = produtoRepository.getOne(p.getId());
+			Produto produto = produtoRepository.getById(p.getId());
 			pedido.getProdutos().add(produto);
 		}
 		pedido = repository.save(pedido);
@@ -43,7 +43,7 @@ public class PedidoService {
 	}
 	@Transactional
 	public PedidoDTO setEntregue(Long id){
-		Pedido pedido = repository.getOne(id);
+		Pedido pedido = repository.getById(id);
 		pedido.setStatus(StatusPedido.ENTREGUE);
 		pedido = repository.save(pedido);
 		return new PedidoDTO(pedido);

@@ -17,7 +17,6 @@ public class Entrega implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	@Column
 	private Double precoEntrega;
 	
 	public Entrega() {}

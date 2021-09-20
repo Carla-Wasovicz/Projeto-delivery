@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import com.ndelivery.nandadelivery.dto.PedidoDTO;
 import com.ndelivery.nandadelivery.dto.ProdutoDTO;
 import com.ndelivery.nandadelivery.services.ProdutoService;
 
@@ -30,6 +29,11 @@ public class ProdutoResource {
 	public ResponseEntity<List<ProdutoDTO>> findAll(){	
 		List<ProdutoDTO> lista = service.findAll();
 		return ResponseEntity.ok().body(lista);
+	}
+	@GetMapping(value = "/{id}")
+	public ResponseEntity<ProdutoDTO> findById(@PathVariable Long id){
+		ProdutoDTO dto = service.findById(id);
+		return ResponseEntity.ok().body(dto);
 	}
 	@PostMapping  
 	public ResponseEntity<ProdutoDTO>insert(@RequestBody ProdutoDTO dto){	

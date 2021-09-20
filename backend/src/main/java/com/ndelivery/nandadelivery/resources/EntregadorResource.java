@@ -14,10 +14,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import com.ndelivery.nandadelivery.dto.EntregadorDTO;
+import com.ndelivery.nandadelivery.entities.Entregador;
 import com.ndelivery.nandadelivery.services.EntregadorService;
 
 @RestController
-@RequestMapping(value = "/entregadores" )
+@RequestMapping(value = "/entregadores")
 public class EntregadorResource {
 	@Autowired
 	private EntregadorService service;
@@ -26,6 +27,11 @@ public class EntregadorResource {
 	public ResponseEntity<List<EntregadorDTO>> findAll(){	
 		List<EntregadorDTO> lista = service.findAll();
 		return ResponseEntity.ok().body(lista);
+	}
+	@GetMapping(value = "/{id}")
+	public ResponseEntity<EntregadorDTO> findById(@PathVariable Long id){
+		EntregadorDTO dto = service.findById(id);
+		return ResponseEntity.ok().body(dto);
 	}
 	@PostMapping  
 	public ResponseEntity<EntregadorDTO>insert(@RequestBody EntregadorDTO dto){	
@@ -45,5 +51,5 @@ public class EntregadorResource {
 		service.delete(id);
 		return ResponseEntity.noContent().build();
 		
-	}
+	} 
 }

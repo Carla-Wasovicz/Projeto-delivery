@@ -4,7 +4,11 @@ import java.io.Serializable;
 import java.time.Instant;
 import java.util.HashSet;
 import java.util.Set;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -24,14 +28,15 @@ public class Pedido implements Serializable {
 	private String endereco;
 	private Double latitude;
 	private Double longitude;
+	@Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")
 	private Instant hora;
+	@Enumerated(value = EnumType.STRING)
 	private StatusPedido status;
 	
 	@ManyToMany
 	@JoinTable(name = "tb_pedido_produto",
 			joinColumns = @JoinColumn(name = "pedido_id"),
-			inverseJoinColumns = @JoinColumn(name = "produto_id")
-			)
+			inverseJoinColumns = @JoinColumn(name = "produto_id"))
 	private Set<Produto> produtos=new HashSet<>();
 	
 	public Pedido() {}
