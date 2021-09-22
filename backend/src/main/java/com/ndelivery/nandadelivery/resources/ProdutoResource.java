@@ -35,7 +35,7 @@ public class ProdutoResource {
 		ProdutoDTO dto = service.findById(id);
 		return ResponseEntity.ok().body(dto);
 	}
-	@PostMapping  
+	@PostMapping
 	public ResponseEntity<ProdutoDTO>insert(@RequestBody ProdutoDTO dto){	
 		dto = service.insert(dto);
 		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")

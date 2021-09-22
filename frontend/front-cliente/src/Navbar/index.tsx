@@ -1,8 +1,9 @@
+import { Link } from 'react-router-dom';
 import './styles.css';
 function Navbar(){
     return(
         <nav className="main-navbar">
-            <a href="home" className="logo-text">PRODUTOS CASEIROS DA NANDA</a>
+            <Link to="/" className="logo-text">BEM VINDO AOS PRODUTOS CASEIROS DA NANDA!!</Link>
         </nav>
     )
 }
