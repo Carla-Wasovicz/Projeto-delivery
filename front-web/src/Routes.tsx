@@ -1,23 +1,21 @@
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Home from "./Home";
 import Navbar from "./Navbar";
-import Pedidos from "./Pedidos";
+import Orders from "./Orders";
 
-function Routes (){
+function Routes() {
     return(
-       <BrowserRouter>
+        <BrowserRouter>
         <Navbar/>
         <Switch>
-            <Route path="/pedidos" >
-                <Pedidos/>
+            <Route path="/orders">
+                <Orders/>
             </Route>
             <Route path="/">
-                <Home />
+                <Home/>
             </Route>
         </Switch>
-       </BrowserRouter> 
+        </BrowserRouter>
     )
-
 }
-
 export default Routes;
